@@ -1,7 +1,10 @@
 package com.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 import com.Bean.EProductBean;
 import com.Dao.EProductDao;
@@ -29,7 +32,16 @@ public class EProductController {
 		
 		//dao insert
 		productDao.addProduct(productBean);
-		return "Welcome";
+		return "Home";
+	} 
+	
+	@GetMapping("/products")
+	public String listProducts(Model model) {
+		List<EProductBean> products = productDao.getAllProducts();// return type
+
+		model.addAttribute("products", products);
+
+		return "EcomListProducts";
 	}
 	
 }
