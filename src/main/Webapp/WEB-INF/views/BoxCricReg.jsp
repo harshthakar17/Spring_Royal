@@ -28,17 +28,17 @@
 				
 				<select name="foodPreference">
 					<option value="-1">-----Select your food preference----</option>
-					<option value="Regular">Regular</option>
+					<option value="Regular" ${reg.foodPreference == 'Regular' ? 'selected' : ''} >Regular</option>
 					<option value="Jain"  ${reg.foodPreference == 'Jain' ? 'selected' : ''}>Jain</option>
 				</select>
 				${foodPreferenceError} <br><br>
 				
 			Drink:
-				RB <input type="checkbox" name="drink" value="rb"/>
-				MD <input type="checkbox" name="drink" value="md"/>
-				TH <input type="checkbox" name="drink" value="th"/>
-				LJ <input type="checkbox" name="drink" value="lj"/>
-				CO <input type="checkbox" name="drink" value="co"/>
+				RB <input type="checkbox" name="drink" value="rb" ${reg.drink.contains('rb')?'checked':'' }/>
+				MD <input type="checkbox" name="drink" value="md" ${reg.drink.contains('md')?'checked':''}/>
+				TH <input type="checkbox" name="drink" value="th" ${reg.drink.contains('th')?'checked':''}/>
+				LJ <input type="checkbox" name="drink" value="lj" ${reg.drink.contains('lj')?'checked':''}/>
+				CO <input type="checkbox" name="drink" value="co" ${reg.drink.contains('co')?'checked':''}/>
 		${drinkError}
 		<br><br>
 				<input type="submit" value="Register"/>

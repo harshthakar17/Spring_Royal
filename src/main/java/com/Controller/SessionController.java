@@ -22,8 +22,8 @@ public class SessionController {
 	}
 	
 	@PostMapping("/saveuser")
-//	public String saveuser(UserBean userbean, Model model) {
-		public String saveuser(UserBean userbean) {
+	public String saveuser(UserBean userbean, Model model) {
+
 		System.out.println("Firstname"+ userbean.getFirstName());
 		System.out.println("Firstname"+ userbean.getEmail());
 		System.out.println("Firstname"+ userbean.getConfirmPassword());
@@ -31,7 +31,8 @@ public class SessionController {
 		System.out.println("Firstname"+ userbean.getLastName());
 		
 		//send data to home
-//		model.addAttribute("user",userbean);
+		model.addAttribute("user",userbean);
+		
 		return  "Home";
 		
 	}

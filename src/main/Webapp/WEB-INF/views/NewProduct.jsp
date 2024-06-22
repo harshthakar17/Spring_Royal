@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>Home</h2>
-
-FirstName: ${ user.firstName } <br>
-LastName: ${ user.lastName } <br>
-Email: ${ user.email } <br>
 
 </body>
 </html>
